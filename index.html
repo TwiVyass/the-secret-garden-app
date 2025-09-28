@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Secret Garden Journal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Vault Door Screen -->
+    <div id="vault-screen" class="screen active">
+        <div class="vault-container">
+            <div class="vault-door">
+                <div class="door-left"></div>
+                <div class="door-right"></div>
+                <div class="door-handle"></div>
+            </div>
+            <div class="password-container">
+                <h1>The Secret Garden </h2>
+                <input type="password" id="password-input" placeholder="Garden password..." maxlength="20">
+                <button id="unlock-btn">Unlock Garden</button>
+                <div class="error-message" id="error-msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Garden Hub Screen -->
+    <div id="garden-screen" class="screen">
+        <div class="garden-background">
+            <div class="garden-elements">
+                <!-- Animated background elements -->
+                <div class="tree tree-1"></div>
+                <div class="tree tree-2"></div>
+                <div class="flowers"></div>
+                <div class="grass"></div>
+            </div>
+            
+            <div class="garden-hub">
+                <h1 class="garden-title"> Your Secret Garden </h1>
+                
+                <div class="paths-container">
+                    <div class="path guided-path" data-mode="guided">
+                        <img src="./assets/journal-mind-1.png" alt="Path 1">
+                        <div class="path-title">🌱</div>
+                        <h3>Guided Journey</h3>
+                        <p>Let prompts guide your thoughts</p>
+                    </div>
+                    
+                    <div class="path free-path" data-mode="free">
+                        <img src="./assets/journal-mind-1.png" alt="Path 2">
+                        <div class="path-title">🌿</div>
+                        <h3>Free Writing</h3>
+                        <p>Express yourself freely</p>
+                    </div>
+                    
+                    <div class="path penny-path" data-mode="penny">
+                        <img src="./assets/journal-mind-1.png" alt="Path 3">
+                        <div class="path-title">💭</div>
+                        <h3>Penny for Thoughts</h3>
+                        <p>Flip coins for inspiration</p>
+                    </div>
+                </div>
+                
+                <div class="garden-progress">
+                    <div class="growth-indicator">
+                        <span>Garden Growth: </span>
+                        <div class="progress-flowers" id="progress-flowers"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Journal Writing Screen -->
+    <div id="journal-screen" class="screen">
+        <div class="journal-header">
+            <button id="back-to-garden" class="back-btn">← Back to Garden</button>
+            <h2 id="journal-mode-title">Writing Mode</h2>
+            <button id="save-entry" class="save-btn">Save 💾</button>
+        </div>
+        
+        <div class="journal-content">
+            <!-- Guided Journaling Mode -->
+            <div id="guided-mode" class="journal-mode">
+                <div class="prompt-container">
+                    <div class="prompt-text" id="current-prompt">How are you feeling today?</div>
+                    <button id="next-prompt">Next Prompt 🌸</button>
+                </div>
+                <textarea id="guided-textarea" placeholder="Write your thoughts here..."></textarea>
+            </div>
+            
+            <!-- Free Writing Mode -->
+            <div id="free-mode" class="journal-mode">
+                <textarea id="free-textarea" placeholder="Let your thoughts flow freely..."></textarea>
+            </div>
+            
+            <!-- Penny for Thoughts Mode -->
+            <div id="penny-mode" class="journal-mode">
+                <div class="penny-container">
+                    <div class="penny" id="penny-coin">
+                        <div class="penny-front">🪙</div>
+                        <div class="penny-back"></div>
+                    </div>
+                    <button id="flip-penny">Flip for Inspiration</button>
+                    <div class="penny-prompt" id="penny-prompt-text"></div>
+                </div>
+                <textarea id="penny-textarea" placeholder="Write about your inspiration..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

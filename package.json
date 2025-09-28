@@ -1,0 +1,21 @@
+{
+  "name": "the-secret-garden",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron ."
+  },
+  "keywords": [
+    "journal",
+    "diary",
+    "writing",
+    "electron"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "description": "A beautiful, private journaling app",
+  "devDependencies": {
+    "electron": "^38.1.2"
+  }
+}
